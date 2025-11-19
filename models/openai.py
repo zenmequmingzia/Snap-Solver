@@ -10,6 +10,10 @@ class OpenAIModel(BaseModel):
         self.api_base_url = api_base_url
         # 允许从外部配置显式指定模型标识符
         self.model_identifier = model_identifier or "gpt-4o-2024-11-20"
+        # 初始化推理配置
+        self.reasoning_config = None
+        # 初始化最大Token数
+        self.max_tokens = None
         
     def get_default_system_prompt(self) -> str:
         return """You are an expert at analyzing questions and providing detailed solutions. When presented with an image of a question:
@@ -60,13 +64,34 @@ class OpenAIModel(BaseModel):
                     }
                 ]
 
-                response = client.chat.completions.create(
-                    model=self.get_model_identifier(),
-                    messages=messages,
-                    temperature=self.temperature,
-                    stream=True,
-                    max_tokens=4000
-                )
+                # 获取最大输出Token设置
+                max_tokens = 4000  # 默认值
+                if hasattr(self, 'max_tokens') and self.max_tokens:
+                    max_tokens = self.max_tokens
+
+                # 准备API调用参数
+                api_params = {
+                    'model': self.get_model_identifier(),
+                    'messages': messages,
+                    'temperature': self.temperature,
+                    'stream': True,
+                    'max_tokens': max_tokens
+                }
+
+                # 处理推理配置（仅适用于推理模型如 o4-mini, GPT-5 等）
+                if hasattr(self, 'reasoning_config') and self.reasoning_config:
+                    # OpenAI 推理模型使用 reasoning_effort 参数
+                    reasoning_depth = self.reasoning_config.get('reasoning_depth', 'medium')
+                    if reasoning_depth == 'extended':
+                        api_params['reasoning_effort'] = 'high'
+                    elif reasoning_depth == 'instant':
+                        api_params['reasoning_effort'] = 'low'
+                    else:
+                        api_params['reasoning_effort'] = 'medium'
+                    
+                    print(f"Debug - OpenAI推理配置: reasoning_effort={api_params.get('reasoning_effort', 'default')}")
+
+                response = client.chat.completions.create(**api_params)
 
                 # 使用累积缓冲区
                 response_buffer = ""
@@ -165,13 +190,34 @@ class OpenAIModel(BaseModel):
                     }
                 ]
 
-                response = client.chat.completions.create(
-                    model=self.get_model_identifier(),
-                    messages=messages,
-                    temperature=self.temperature,
-                    stream=True,
-                    max_tokens=4000
-                )
+                # 获取最大输出Token设置
+                max_tokens = 4000  # 默认值
+                if hasattr(self, 'max_tokens') and self.max_tokens:
+                    max_tokens = self.max_tokens
+
+                # 准备API调用参数
+                api_params = {
+                    'model': self.get_model_identifier(),
+                    'messages': messages,
+                    'temperature': self.temperature,
+                    'stream': True,
+                    'max_tokens': max_tokens
+                }
+
+                # 处理推理配置（仅适用于推理模型如 o4-mini, GPT-5 等）
+                if hasattr(self, 'reasoning_config') and self.reasoning_config:
+                    # OpenAI 推理模型使用 reasoning_effort 参数
+                    reasoning_depth = self.reasoning_config.get('reasoning_depth', 'medium')
+                    if reasoning_depth == 'extended':
+                        api_params['reasoning_effort'] = 'high'
+                    elif reasoning_depth == 'instant':
+                        api_params['reasoning_effort'] = 'low'
+                    else:
+                        api_params['reasoning_effort'] = 'medium'
+                    
+                    print(f"Debug - OpenAI推理配置: reasoning_effort={api_params.get('reasoning_effort', 'default')}")
+
+                response = client.chat.completions.create(**api_params)
 
                 # 使用累积缓冲区
                 response_buffer = ""

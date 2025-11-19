@@ -83,6 +83,14 @@
             "version": "latest",
             "description": "OpenAI高性能代码模型Codex High，侧重复杂代码生成与重构"
         },
+        "o4-mini": {
+            "name": "O4-mini",
+            "provider": "openai",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "OpenAI轻量级推理模型O4-mini，支持图像输入与thinking模式"
+        },
 
         "deepseek-chat": {
             "name": "DeepSeek-V3",

@@ -128,8 +128,8 @@ def create_model_instance(model_id, settings, is_reasoning=False):
     
     # 确定需要哪个API密钥
     api_key_id = None
-    # 特殊情况：o3-mini使用OpenAI API密钥
-    if model_id.lower() == "o3-mini":
+    # 特殊情况：o3-mini和o4-mini使用OpenAI API密钥
+    if model_id.lower() in ["o3-mini", "o4-mini"]:
         api_key_id = "OpenaiApiKey"
     # 其他Anthropic/Claude模型
     elif "claude" in model_id.lower() or "anthropic" in model_id.lower():

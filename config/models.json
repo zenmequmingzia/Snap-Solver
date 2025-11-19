@@ -32,14 +32,7 @@
         }
     },
     "models": {
-        "claude-opus-4-20250514": {
-            "name": "Claude 4 Opus",
-            "provider": "anthropic",
-            "supportsMultimodal": true,
-            "isReasoning": true,
-            "version": "20250514",
-            "description": "最强大的Claude 4 Opus模型，支持图像理解和深度思考过程"
-        },
+
         "claude-opus-4-1-20250805": {
             "name": "Claude 4.1 Opus",
             "provider": "anthropic",
@@ -56,14 +49,7 @@
             "version": "20250805",
             "description": "Claude Opus 4.1 思考模式，启用更长思考过程以提升推理质量"
         },
-        "claude-sonnet-4-20250514": {
-            "name": "Claude 4 Sonnet",
-            "provider": "anthropic",
-            "supportsMultimodal": true,
-            "isReasoning": true,
-            "version": "20250514",
-            "description": "高性能的Claude 4 Sonnet模型，支持图像理解和思考过程"
-        },
+
         "claude-sonnet-4-5-20250929": {
             "name": "Claude 4.5 Sonnet",
             "provider": "anthropic",
@@ -72,14 +58,7 @@
             "version": "20250929",
             "description": "Claude Sonnet 4.5 版，兼具多模态理解与最新推理能力"
         },
-        "gpt-4o-2024-11-20": {
-            "name": "GPT-4o",
-            "provider": "openai",
-            "supportsMultimodal": true,
-            "isReasoning": false,
-            "version": "2024-11-20",
-            "description": "OpenAI的GPT-4o模型，支持图像理解"
-        },
+
         "gpt-5-2025-08-07": {
             "name": "GPT-5",
             "provider": "openai",
@@ -104,14 +83,7 @@
             "version": "latest",
             "description": "OpenAI高性能代码模型Codex High，侧重复杂代码生成与重构"
         },
-        "o3-mini": {
-            "name": "o3-mini",
-            "provider": "openai",
-            "supportsMultimodal": false,
-            "isReasoning": true,
-            "version": "latest",
-            "description": "OpenAI的o3-mini模型，支持图像理解和思考过程"
-        },
+
         "deepseek-chat": {
             "name": "DeepSeek-V3",
             "provider": "deepseek",
@@ -144,14 +116,7 @@
             "version": "latest",
             "description": "阿里通义千问VL-MAX模型，视觉理解能力最强，支持图像理解和复杂任务"
         },
-        "gemini-2.5-pro": {
-            "name": "Gemini 2.5 Pro",
-            "provider": "google",
-            "supportsMultimodal": true,
-            "isReasoning": true,
-            "version": "latest",
-            "description": "Google最强大的Gemini 2.5 Pro模型，支持图像理解（需要付费API密钥）"
-        },
+
         "gemini-2.5-flash": {
             "name": "Gemini 2.5 Flash",
             "provider": "google",
@@ -160,14 +125,7 @@
             "version": "latest",
             "description": "Google最新的Gemini 2.5 Flash模型，支持图像理解，速度更快，性能更好"
         },
-        "gemini-2.0-flash": {
-            "name": "Gemini 2.0 Flash",
-            "provider": "google",
-            "supportsMultimodal": true,
-            "isReasoning": false,
-            "version": "latest",
-            "description": "Google更快速的Gemini 2.0 Flash模型，支持图像理解，有免费配额"
-        },
+
         "gemini-3-pro": {
             "name": "Gemini 3 Pro",
             "provider": "google",

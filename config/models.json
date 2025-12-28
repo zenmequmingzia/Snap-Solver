@@ -72,6 +72,14 @@
             "version": "20250929",
             "description": "Claude Sonnet 4.5 版，兼具多模态理解与最新推理能力"
         },
+        "claude-opus-4-5-20251101": {
+            "name": "Claude 4.5 Opus",
+            "provider": "anthropic",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "20251101",
+            "description": "Claude Opus 4.5 版，顶级多模态推理能力与深度思考"
+        },
         "gpt-4o-2024-11-20": {
             "name": "GPT-4o",
             "provider": "openai",
@@ -111,6 +119,30 @@
             "isReasoning": true,
             "version": "latest",
             "description": "OpenAI的o3-mini模型，支持图像理解和思考过程"
+        },
+        "o4-mini": {
+            "name": "o4-mini",
+            "provider": "openai",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "OpenAI的o4-mini模型，支持多模态输入与高效推理"
+        },
+        "gpt-5.2": {
+            "name": "GPT-5.2",
+            "provider": "openai",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "OpenAI最新GPT-5.2模型，支持多模态输入与深度推理"
+        },
+        "gpt-5.2-codex": {
+            "name": "GPT-5.2 Codex",
+            "provider": "openai",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "OpenAI GPT-5.2 Codex模型，专注代码生成与多模态推理"
         },
         "deepseek-chat": {
             "name": "DeepSeek-V3",
@@ -175,6 +207,22 @@
             "isReasoning": true,
             "version": "latest",
             "description": "Google Gemini 3 Pro 顶级推理模型，面向复杂多模态任务"
+        },
+        "gemini-3-flash": {
+            "name": "Gemini 3 Flash",
+            "provider": "google",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "Google Gemini 3 Flash 高速模型，支持多模态与推理能力"
+        },
+        "gemini-3-pro-high": {
+            "name": "Gemini 3 Pro High",
+            "provider": "google",
+            "supportsMultimodal": true,
+            "isReasoning": true,
+            "version": "latest",
+            "description": "Google Gemini 3 Pro High 高配版，最强多模态推理性能"
         },
         "doubao-seed-1-6-250615": {
             "name": "Doubao-Seed-1.6",
